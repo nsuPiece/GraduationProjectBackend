@@ -20,7 +20,8 @@ public class Program
 
         app.MapControllers();
 
-        //app.AddTaos();
+        //添加涛思数据库
+        app.AddTaos();
 
         app.Run();
     }

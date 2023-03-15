@@ -19,16 +19,7 @@ public static class TaosExtensions
     /// <returns></returns>
     public static IApplicationBuilder AddTaos(this IApplicationBuilder applicationBuilder)
     {
-        var option = new TaosOptions
-        { 
-            Host = "47.104.104.120",
-            Port = 830,
-            UserName = "root",
-            Password = "taosdata",
-            Database = "test"
-        };
-
-        Conn = TDengine.Connect(option.Host, option.UserName, option.Password, option.Database, option.Port);
+        Conn = TDengine.Connect("47.104.104.120", "root", "taosdata", "test", 830);
 
         if (Conn == IntPtr.Zero)
             throw new Exception("Connect to TDengine failed");
