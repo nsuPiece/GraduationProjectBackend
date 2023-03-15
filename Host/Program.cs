@@ -1,27 +1,27 @@
-namespace Host
+using Taos.Extensions;
+
+namespace Host;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        var builder = WebApplication.CreateBuilder(args).Inject();
 
-            // Add services to the container.
+        builder.Services.AddControllers().AddInject();
 
-            builder.Services.AddControllers();
+        var app = builder.Build();
 
-            var app = builder.Build();
+        app.UseHttpsRedirection();
 
-            // Configure the HTTP request pipeline.
+        app.UseAuthorization();
 
-            app.UseHttpsRedirection();
+        app.UseInject();
 
-            app.UseAuthorization();
+        app.MapControllers();
 
+        //app.AddTaos();
 
-            app.MapControllers();
-
-            app.Run();
-        }
+        app.Run();
     }
 }
