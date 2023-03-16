@@ -12,21 +12,23 @@ public static class TaosExtensions
     public static nint Conn { get; set; }
 
     /// <summary>
-    /// 添加 Taos
+    /// 添加 TDengine
     /// </summary>
     /// <param name="services">服务集合</param>
     /// <param name="configuration">配置信息</param>
     /// <returns></returns>
-    public static IApplicationBuilder AddTaos(this IApplicationBuilder applicationBuilder)
+    public static IServiceCollection AddTaos(this IServiceCollection services, IConfiguration configuration)
     {
-        Conn = TDengine.Connect("47.104.104.120", "root", "taosdata", "test", 830);
+        var option = configuration.GetOptions<TaosOptions>();
+
+        Conn = TDengine.Connect(option.Host, option.UserName, option.Password, option.Database, option.Port);
 
         if (Conn == IntPtr.Zero)
             throw new Exception("Connect to TDengine failed");
         else
             Console.WriteLine("Connect to TDengine success");
 
-        return applicationBuilder;
+        return services;
     }
 
     public static Task InsertAsync(string sql)

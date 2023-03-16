@@ -17,9 +17,6 @@ namespace Host.Filter;
 /// </summary>
 public class RequestAuditFilter : IAsyncActionFilter
 {
-
-
-    /// <inheritdoc/>
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
         //============== 这里是执行方法之前获取数据 ====================
@@ -77,8 +74,6 @@ public class RequestAuditFilter : IAsyncActionFilter
 
         var uaParser = Parser.GetDefault();
         var c = uaParser.Parse(userAgent);
-
-        var test = returnResult?.ToJson();
 
         var data = new OperationRecordsLog()
         {

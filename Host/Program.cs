@@ -1,3 +1,4 @@
+using Host.Filter;
 using Tao.Extensions;
 
 namespace Host;
@@ -8,7 +9,16 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args).Inject();
 
-        builder.Services.AddControllers().AddInject();
+        // 服务配置
+        var services = builder.Services;
+        var configuration = builder.Configuration;
+
+        services.AddControllers().AddInject();
+
+        //添加涛思数据库
+        services.AddTaos(configuration);
+        //操作日志
+        services.AddMvcFilter<RequestAuditFilter>();
 
         var app = builder.Build();
 
@@ -19,9 +29,6 @@ public class Program
         app.UseInject();
 
         app.MapControllers();
-
-        //添加涛思数据库
-        app.AddTaos();
 
         app.Run();
     }
