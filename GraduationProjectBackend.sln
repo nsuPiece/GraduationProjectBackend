@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "Host\Host.csproj", "{A093BDEE-B804-4F66-B9B5-14A8328979DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taos", "Taos\Taos.csproj", "{23F163CC-D04D-4030-92A2-EE75A57B2972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tao", "Taos\Tao.csproj", "{23F163CC-D04D-4030-92A2-EE75A57B2972}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{627023DE-6A46-40E2-9F38-3DA0287353CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{627023DE-6A46-40E2-9F38-3DA0287353CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Taos.Base;
+using Tao.Base;
 using TDengineDriver;
 
-namespace Taos.Extensions;
+namespace Tao.Extensions;
 
 public static class TaosExtensions
 {
@@ -31,16 +31,16 @@ public static class TaosExtensions
 
     public static Task InsertAsync(string sql)
     {
-        var res = TDengineDriver.TDengine.Query(Conn, sql);
+        var res = TDengine.Query(Conn, sql);
 
-        if (TDengineDriver.TDengine.ErrorNo(res) != 0)
+        if (TDengine.ErrorNo(res) != 0)
         {
-            throw new Exception($"failed to insert data since: {TDengineDriver.TDengine.Error(res)}");
+            throw new Exception($"failed to insert data since: {TDengine.Error(res)}");
         }
 
-        var affectedRows = TDengineDriver.TDengine.AffectRows(res);
+        var affectedRows = TDengine.AffectRows(res);
         Console.WriteLine("affectedRows " + affectedRows);
-        TDengineDriver.TDengine.FreeResult(res);
+        TDengine.FreeResult(res);
         return Task.CompletedTask;
     }
 
@@ -131,7 +131,7 @@ public static class TaosExtensions
 
         string[] lines = { measurement + tag_set + " " + field_set.Remove(0, 1) + " " + timestamp };
 
-        var rows = TDengineDriver.TDengine.SchemalessInsertRaw(conn, lines,
+        var rows = TDengine.SchemalessInsertRaw(conn, lines,
             TDengineSchemalessProtocol.TSDB_SML_LINE_PROTOCOL,
             TDengineSchemalessPrecision.TSDB_SML_TIMESTAMP_MILLI_SECONDS);
 

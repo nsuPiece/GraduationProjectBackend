@@ -1,6 +1,6 @@
-﻿using Taos.Base;
+﻿using Tao.Base;
 
-namespace Nutri.TDengine.Tables;
+namespace Tao.Tables;
 
 /// <summary>
 /// 登录日志

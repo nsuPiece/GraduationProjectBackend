@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using StackExchange.Profiling.Internal;
 using System.Diagnostics;
 using System.Security.Claims;
-using Taos.Extensions;
-using Taos.Tables;
+using Tao.Extensions;
+using Tao.Tables;
 using UAParser;
 
 namespace Host.Filter;

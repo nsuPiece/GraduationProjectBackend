@@ -1,5 +1,6 @@
-﻿using Taos.Base;
-namespace Taos.Tables;
+﻿using Tao.Base;
+
+namespace Tao.Tables;
 
 public class OperationLog : TaosBaseClass
 {
@@ -29,7 +30,7 @@ public class OperationLogTags : TaosBaseTags
     /// </summary>
     public string UserName { get; set; }
 }
-public class OperationLogFields :  TaosBaseFields
+public class OperationLogFields : TaosBaseFields
 {
     /// <summary>
     /// 结束时间
