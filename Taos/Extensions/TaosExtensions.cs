@@ -147,9 +147,9 @@ public static class TaosExtensions
     /// <param name="conn">连接的数据库</param>
     /// <param name="TName">查询的表名</param>
     /// <returns></returns>
-    public static SqlQueryExtensions<T> Query<T>(this IntPtr conn, string TName) where T : class
+    public static SqlQueryExtensions<T> Query<T>(this IntPtr conn, string tName) where T : class
     {
-        return new SqlQueryExtensions<T>(TName);
+        return new SqlQueryExtensions<T>(tName);
     }
 }
 
