@@ -11,9 +11,8 @@
 	<ItemGroup>
 		<PackageReference Include="UAParser" Version="3.1.47" />
 	</ItemGroup>
-	
-  <ItemGroup>
-    <ProjectReference Include="..\Taos\Tao.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\TaosData\TaosData.csproj" />
+	</ItemGroup>
 
 </Project>

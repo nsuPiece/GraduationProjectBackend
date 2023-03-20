@@ -1,6 +1,6 @@
-﻿using Tao.Base;
+﻿using TaosData.Base;
 
-namespace Tao.Tables;
+namespace TaosData.Tables;
 
 /// <summary>
 /// 登录日志

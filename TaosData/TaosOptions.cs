@@ -1,4 +1,4 @@
-﻿namespace Tao;
+﻿namespace TaosData;
 
 /// <summary>
 /// 涛思数据库配置

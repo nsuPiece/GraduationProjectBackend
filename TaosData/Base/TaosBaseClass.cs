@@ -1,4 +1,4 @@
-﻿namespace Tao.Base;
+﻿namespace TaosData.Base;
 
 public abstract class TaosBaseClass
 {

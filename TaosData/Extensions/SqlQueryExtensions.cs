@@ -4,7 +4,7 @@ using System.Text;
 using Mapster;
 using TDengineDriver.Impl;
 
-namespace Tao.Extensions;
+namespace TaosData.Extensions;
 public class SqlQueryExtensions<T> where T : class
 {
     // 获取 T 的所有公共实例属性且不为Obsolete

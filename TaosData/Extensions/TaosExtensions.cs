@@ -1,11 +1,10 @@
 ﻿using Core.Extensions;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Tao.Base;
+using TaosData.Base;
 using TDengineDriver;
 
-namespace Tao.Extensions;
+namespace TaosData.Extensions;
 
 public static class TaosExtensions
 {
