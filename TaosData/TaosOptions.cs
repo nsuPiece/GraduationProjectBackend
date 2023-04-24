@@ -18,7 +18,7 @@ public class TaosOptions
     /// <summary>
     /// 账号
     /// </summary>
-    public string UserName { get; set; }
+    public string UserName { get; set; } 
 
     /// <summary>
     /// 密码

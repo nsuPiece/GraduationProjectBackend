@@ -142,7 +142,6 @@ public class SqlQueryExtensions<T> where T : class
     /// <returns></returns>
     public SqlQueryExtensions<T> LIMIT(long x, long y)
     {
-        x = (x - 1) * y;
         _limitConditions = $" LIMIT {x} , {y} ";
         return this;
     }
@@ -210,6 +209,7 @@ public class SqlQueryExtensions<T> where T : class
     public T ToOne()
     {
         _limitConditions = " LIMIT 0 , 1 ";
+        _oderbyConditions =new List<string> { " _ts DESC "};
         if (sql == null || sql.Length == 0) sql = GetSql();
 
         var res = TDengineDriver.TDengine.Query(TaosExtensions.Conn, sql);
@@ -247,6 +247,7 @@ public class SqlQueryExtensions<T> where T : class
     public Task<T> ToOneAsync()
     {
         _limitConditions = " LIMIT 0 , 1 ";
+        _oderbyConditions = new List<string> { "  _ts DESC " };
         if (sql == null || sql.Length == 0) sql = GetSql();
 
         var res = TDengineDriver.TDengine.Query(TaosExtensions.Conn, sql);

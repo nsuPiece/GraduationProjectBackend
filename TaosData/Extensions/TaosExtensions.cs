@@ -85,7 +85,7 @@ public static class TaosExtensions
                     s = s.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("=", "\\=").Replace(",", "\\,").Replace(" ", "\\ ");
                     if (s.Length > 4000)
                         s = s[..4000] + "...";
-                    field_set += $",{propName}=L\"{s} \"";
+                    field_set += $",{propName}=L\"{s}\"";
                     break;
                 case double d:
                     field_set += $",{propName}={d}f64";
